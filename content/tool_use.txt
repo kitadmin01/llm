@@ -1,0 +1,21 @@
+Web2 Tools: Traffic Trends, Funnel, Loyalty Lens, Trail, Segmentor, Growth Monitor, Loyalty Metrics, Recorder, Integration Hub.
+
+Traffic Trends: Analyze the flow of visitors to your website over time. Identify peak traffic periods, understand user navigation patterns, and gauge the overall health of your website’s traffic. Make informed decisions to optimize user acquisition and retention.
+
+Funnel: Visualize and understand the user journey on your website. Track conversions at each stage, identify drop-offs, and optimize your website’s flow to maximize conversions and user satisfaction.
+
+Loyalty Lens: Measure user loyalty and engagement over time. Understand how often users return to your website, their activities during repeat visits, and factors influencing their loyalty. Tailor your strategies to enhance user retention.
+
+Trail: Track and visualize the paths visitors take through your website. Understand user navigation patterns, identify popular routes, and optimize your website layout for a seamless user experience.
+
+Segmentor: An advanced analytical tool designed to group, analyze, and track visitors based on shared characteristics, behaviors, or experiences within a specific timeframe on your website or application.
+
+Growth Monitor: A sophisticated analytical tool designed to track, measure, and visualize the evolving engagement and behavior of visitors throughout their entire interaction lifecycle with your website or application.
+
+Loyalty Metrics: Loyalty Metrics quantify the sustained engagement of users with your platform, measuring the effectiveness of your retention strategies over time.
+
+Recorder: A dynamic tool that captures and replays user sessions to unveil the intricacies of user interactions on your website. It provides a visual narrative of their experience, highlighting interactions, navigation paths, and engagement points.
+
+Integration Hub: A centralized platform designed to seamlessly integrate, manage, and synchronize various tools, applications, and data sources with your primary website or application. Whether you’re looking to integrate CRM systems, marketing tools, analytics platforms, or any other third-party applications, the Integration Hub makes the process straightforward and efficient.
+
+Web3 Tools: Chain Campaign - A specialized analytical tool designed to monitor, track, and visualize the performance of tokens and contracts on the Ethereum blockchain during specific marketing campaigns.

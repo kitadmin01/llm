@@ -1,0 +1,8 @@
+venv
+env
+.venv
+*.pyc
+__pycache__/
+staticfiles
+.env
+llm_env/*
