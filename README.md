@@ -3,6 +3,9 @@
 ## Overview
 This repository contains a collection of programs designed to create vector embeddings for content from the website [www.analytickit.com](https://www.analytickit.com). It utilizes both Hugging Face open-source models and OpenAI models to generate embeddings. These embeddings are then uploaded to PineCone, enabling a feature on the Analytickit website where users can ask questions and receive answers about the Analytickit SAAS platform.
 
+## Data Flow Diagram
+![Alt text](image.png)
+
 ## Contents
 - `requirements.txt`: Lists all the Python dependencies required for the project.
 - `uploader_openai.py`: Script to create embeddings using OpenAI models and upload them to PineCone.
