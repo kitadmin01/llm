@@ -124,7 +124,7 @@ paramiko==2.9.3
 parso==0.8.1
 pexpect==4.7.0
 pickleshare==0.7.5
-Pillow==9.0.1
+Pillow==10.0.1
 platformdirs==2.5.2
 pluggy==1.0.0
 posthoganalytics==1.4.9
