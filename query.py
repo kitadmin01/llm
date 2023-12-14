@@ -62,7 +62,7 @@ class TextEmbeddingQuery:
 
 # For local testing
 if __name__ == "__main__":
-    pinecone_api_key = "58f14d8c-0dad-469f-9528-81fca0a063ad"
+    pinecone_api_key = ""
     pinecone_env = "gcp-starter"
     pincone_index = "kit"
     model_name = "bert-large-uncased-whole-word-masking-finetuned-squad"
