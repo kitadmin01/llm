@@ -6,4 +6,4 @@ __pycache__/
 staticfiles
 .env
 llm_env/*
-ector_store
+vector_store/
