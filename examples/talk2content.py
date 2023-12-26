@@ -80,7 +80,7 @@ print(f'Distance between different embeddings: {distance_different}')
 
 
 # Initialize a vector database to store embeddings
-# Note: 'split_docs' should be a list of documents already processed
+# Note: 'split_docs' should be a list of documents already processed.
 persist_directory = 'vector_store'
 vectordb = Chroma.from_documents(documents=split_docs, embedding=embedding, persist_directory=persist_directory)
 
