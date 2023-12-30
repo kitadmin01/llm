@@ -26,3 +26,64 @@ The primary goal of this project is to enhance the user experience on the Analyt
 
 ## License
 This project is licensed under the [LICENSE](LICENSE) included in the repository.
+
+## Architectural Steps
+## Program 1: Data Processing and Embedding Storage
+
+### PostgreSQL Database
+- **Description**: Contains FAQ data.
+- **Data Flow**: Arrows from the database indicate data flow to the next component.
+
+### Data Retrieval and Preprocessing
+- **Function**: Retrieves data from PostgreSQL.
+- **Processes**:
+  - Preprocesses text (cleaning, normalization).
+- **Connections**:
+  - Connects to the PostgreSQL database.
+  - Connects to the Embedding Model.
+
+### Embedding Model
+- **Function**: Converts preprocessed text into embeddings.
+- **Data Flow**:
+  - Receives input from Data Retrieval and Preprocessing.
+  - Sends embeddings to Pinecone.
+
+### Pinecone (Vector Database)
+- **Function**: Stores embeddings with metadata.
+- **Data Flow**:
+  - Receives embeddings from the Embedding Model.
+
+## Program 2: User Interaction and Response Generation
+
+### User Interface
+- **Function**:
+  - Receives user queries.
+  - Sends queries to the Embedding Model.
+
+### Embedding Model (same as in Program 1)
+- **Function**:
+  - Converts user queries into embeddings.
+  - Sends query embeddings to Pinecone.
+
+### Pinecone (Vector Database) (same as in Program 1)
+- **Function**:
+  - Receives query embeddings.
+  - Performs similarity search.
+  - Returns matching FAQ IDs and metadata.
+- **Connections**:
+  - Connects to PostgreSQL Database for FAQ retrieval.
+
+### PostgreSQL Database (same as in Program 1)
+- **Function**:
+  - Receives FAQ IDs and metadata from Pinecone.
+  - Retrieves corresponding FAQ texts.
+  - Sends FAQ texts to the Language Model.
+
+### Language Model (e.g., GPT-3)
+- **Function**:
+  - Receives combined context (user query + FAQ texts).
+  - Generates a response based on the context.
+  - Sends the response back to the User Interface.
+
+### User Interface
+- **Function**: Displays the generated response to the user.

@@ -7,3 +7,5 @@ staticfiles
 .env
 llm_env/*
 vector_store/
+rag_eg/*
+sage_maker.py
