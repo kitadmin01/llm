@@ -88,5 +88,8 @@ This project is licensed under the [LICENSE](LICENSE) included in the repository
 ### User Interface
 - **Function**: Displays the generated response to the user.
 
+# RAG in AWS SageMaker
+![Alt text](RAG-SageMaker.png)
+
 # MLOps in AWS
 ![Alt text](aws_mlops.png)
