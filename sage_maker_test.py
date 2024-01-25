@@ -18,7 +18,7 @@ pinecone.init(api_key=os.environ.get("PINECONE_API_KEY"), environment=os.environ
 # Model and endpoint names
 gpt2_model_name = "gpt2-medium-model"
 gpt2_endpoint_name = "gpt2-medium-demo"
-bert_model_name = "bert-base-model"
+bert_model_name = "bert-base-uncased"  
 bert_endpoint_name = "bert-base-demo"
 
 # Create and use the ModelDeploymentAndEndpointManager class
@@ -48,8 +48,9 @@ llm_image_bert = get_huggingface_llm_image_uri("huggingface", version="0.8.2")
 # deployment_manager.deploy_model(hub_config_bert, llm_image_bert, bert_endpoint_name, bert_model_name)
 
 # Initialize EmbeddingCreator with the predictor for the BERT model
+# Initialize EmbeddingCreator with the predictor for the BERT model
 bert_predictor = HuggingFacePredictor(endpoint_name=bert_endpoint_name)
-embedding_creator = EmbeddingCreator(bert_predictor)
+embedding_creator = EmbeddingCreator(bert_predictor, bert_model_name)
 
 # Initialize QueryProcessor with the predictor for the GPT-2 model
 gpt2_predictor = HuggingFacePredictor(endpoint_name=gpt2_endpoint_name)

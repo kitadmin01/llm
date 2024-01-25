@@ -1,23 +1,38 @@
+from transformers import AutoTokenizer
+from typing import List
+import json
 import numpy as np
-import sagemaker
+
+import json
 
 class EmbeddingCreator:
-    def __init__(self, encoder_model_predictor):
+    def __init__(self, encoder_model_predictor, model_name):
         self.encoder = encoder_model_predictor
-        # Ensure the encoder's serializer is JSONSerializer
-        self.encoder.serializer = sagemaker.serializers.JSONSerializer()
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
 
-    def embed_docs(self, docs):
+    def embed_docs(self, docs: List[str]) -> List[List[float]]:
         all_embeddings = []
 
-        # Directly send the list of documents as the payload
-        try:
-            response = self.encoder.predict(docs)
-            embeddings = response  # Adjust based on your model's response format
-            if embeddings:
-                all_embeddings.extend(embeddings)
-        except Exception as e:
-            print(f"Error in making prediction. Error: {e}")
+        for doc in docs:
+            # Tokenize the document
+            inputs = self.tokenizer(doc, return_tensors="pt")
+
+            # Convert tokenized input to lists
+            inputs_to_list = {key: value.tolist() for key, value in inputs.items()}
+
+            # Prepare the payload, ensuring it's not double-serialized
+            payload = {"inputs": inputs_to_list}
+
+            try:
+                response = self.encoder.predict(payload)
+                embeddings = np.mean(np.array(response), axis=1)
+                all_embeddings.append(embeddings.tolist())
+            except Exception as e:
+                print(f"Error in embedding document: {e}")
+
+        if not all_embeddings:
             raise Exception("No embeddings were generated due to errors.")
 
-        return np.array(all_embeddings)
+        return all_embeddings
+
+
