@@ -4,6 +4,7 @@ variable "aws_region" {
   default     = "us-east-1" 
 }
 
+# variables for kafka
 
 variable "enabled" {
   description = "Flag to enable or disable module resources"
@@ -170,3 +171,100 @@ variable "s3_logs_prefix" {
   type        = string
 }
 
+# variables for eks fargate
+
+variable "vpc_cidr_block" {
+  description = "The CIDR block for the VPC"
+  type        = string
+}
+
+variable "availability_zone" {
+  description = "The availability zone to deploy the subnet for the EKS cluster"
+  type        = string
+}
+
+variable "subnet_cidr_block" {
+  description = "The CIDR block for the subnet in the VPC"
+  type        = string
+}
+
+variable "cluster_name" {
+  description = "The name of the EKS cluster"
+  type        = string
+}
+
+variable "kubernetes_version" {
+  description = "Version of Kubernetes to use for the EKS cluster"
+  type        = string
+  default     = "1.21"
+}
+
+variable "oidc_provider_enabled" {
+  description = "Whether to enable the OIDC Identity Provider for the EKS cluster"
+  type        = bool
+  default     = true
+}
+
+variable "enabled_cluster_log_types" {
+  description = "A list of the desired control plane logging to enable"
+  type        = list(string)
+  default     = ["api", "audit", "authenticator"]
+}
+
+variable "cluster_log_retention_period" {
+  description = "Number of days to retain log events"
+  type        = number
+  default     = 7
+}
+
+variable "kubernetes_namespace" {
+  description = "Kubernetes namespace to use for the Fargate profile"
+  type        = string
+  default     = "default"
+}
+
+variable "kubernetes_labels" {
+  description = "Key-value map of Kubernetes labels for selection by the Fargate profile"
+  type        = map(string)
+  default     = {
+    Role = "fargate"
+  }
+}
+
+variable "iam_role_kubernetes_namespace_delimiter" {
+  description = "Delimiter to use for IAM role and Kubernetes namespace"
+  type        = string
+  default     = "-"
+}
+
+variable "fargate_profile_name" {
+  description = "Name of the Fargate profile"
+  type        = string
+}
+
+variable "fargate_profile_iam_role_name" {
+  description = "IAM role name for the Fargate profile"
+  type        = string
+}
+
+
+# variables for S3
+variable "s3_bucket_name" {
+  description = "The name of the S3 bucket to create"
+  type        = string
+}
+
+variable "s3_bucket_tag_name" {
+  description = "The tag name for the S3 bucket"
+  type        = string
+}
+
+variable "s3_bucket_tag_value" {
+  description = "The value of the tag for the S3 bucket"
+  type        = string
+}
+
+variable "msk_cluster_arn" {
+  description = "The ARN of the MSK cluster"
+  type        = string
+}

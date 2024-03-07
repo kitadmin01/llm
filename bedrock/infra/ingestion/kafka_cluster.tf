@@ -79,6 +79,15 @@ resource "aws_msk_cluster" "default" {
       broker_node_group_info[0].storage_info[0].ebs_storage_info[0].volume_size,
     ]
   }
+  
 
   tags = module.this.tags
+}
+
+
+resource "aws_lambda_event_source_mapping" "example_kafka" {
+  event_source_arn  = var.msk_cluster_arn # The ARN of your MSK cluster
+  function_name     = aws_lambda_function.example.arn
+  topics            = ["your-kafka-topic-name"] # Name of your Kafka topic
+  starting_position = "TRIM_HORIZON"
 }
