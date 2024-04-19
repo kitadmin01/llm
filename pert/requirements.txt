@@ -1,0 +1,18 @@
+# accelerate: A library for accelerating PyTorch models on various hardware.
+# peft: A library for parameter-efficient fine-tuning techniques like LoRA.
+# bitsandbytes: A library for optimizing memory usage through quantization.
+# transformers: The Hugging Face Transformers library for working with language models.
+# trl: The Transformers Reinforcement Learning library for supervised fine-tuning.
+# datasets: A library for loading and processing datasets.
+# torch: The PyTorch deep learning framework.
+# huggingface-cli: The Hugging Face command-line interface for managing models and datasets.
+
+
+accelerate==0.21.0
+peft==0.4.0
+bitsandbytes==0.40.2
+transformers==4.31.0
+trl==0.4.7
+datasets
+torch
+huggingface-cli
