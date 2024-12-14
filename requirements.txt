@@ -1,4 +1,4 @@
-aiohttp==3.8.1
+aiohttp==3.9.2
 aiosignal==1.2.0
 amqp==2.6.0
 apturl==0.5.2
